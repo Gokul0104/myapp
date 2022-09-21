@@ -1,0 +1,31 @@
+<html>
+<head><title>Form</title>
+<body>
+
+    <h1>Express assignment 2</h1>
+
+    <form action="\users" method="post">
+      <input type ="text" name="user">
+      <input type ="text" name="id">
+      <button type="submit">Submit</button>
+    </form>
+
+    <button class="btn1">Get JSON</button>
+
+<script>
+
+const btn1 = document.querySelector('.btn1');
+btn1.addEventListener('click',()=>{
+    fetch('/userss').then(res => res.json())
+    .then((data) => {
+    console.log(data);
+    data.users.array.array.forEach(element => {
+        console.log(element);
+    });
+});
+})
+
+</script>
+</body>
+</head>
+</html>
